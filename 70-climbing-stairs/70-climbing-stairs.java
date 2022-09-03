@@ -38,7 +38,7 @@ class Solution {
         int prevPrevStair=1;
         int prevStair=1;
         int currStair=0;
-        for(int i=2;i<dp.length;i++){
+        for(int i=2;i<n+1;i++){
             currStair=prevPrevStair+prevStair;
             
             //agle jum ki taiyari
