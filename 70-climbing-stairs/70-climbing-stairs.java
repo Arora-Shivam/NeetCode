@@ -27,12 +27,26 @@ class Solution {
         
 //         return dp[n];
         
-        dp[0]=1;
-        dp[1]=1;
+//         dp[0]=1;
+//         dp[1]=1;
         
+//         for(int i=2;i<dp.length;i++){
+//             dp[i]=dp[i-1]+dp[i-2];
+//         }
+//         return dp[dp.length-1];
+        
+        int prevPrevStair=1;
+        int prevStair=1;
+        int currStair=0;
         for(int i=2;i<dp.length;i++){
-            dp[i]=dp[i-1]+dp[i-2];
+            currStair=prevPrevStair+prevStair;
+            
+            //agle jum ki taiyari
+            prevPrevStair=prevStair;
+            prevStair=currStair;
+            
+           
         }
-        return dp[dp.length-1];
+        return prevStair;
     }
 }
