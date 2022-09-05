@@ -8,7 +8,30 @@ class Solution {
         
         return x;
     }
- 
+    // TC -> O(N^2) SC -> O(N)
+//      public int lengthOfLIS(int[] nums,int[] dp) {
+        
+//          for(int i=0;i<nums.length;i++){
+             
+//              for(int j=i+1;j<nums.length;j++){
+                 
+//                  if(nums[i]<nums[j] && dp[j]==dp[i]){
+//                      dp[j]++;
+//                  }
+//              }
+//          }
+         
+//          int pad=dp[0];
+         
+//          for(int i : dp){
+//              if(pad<i){
+//                  pad=i;
+//              }
+//          }
+         
+//          return pad;
+//     }
+        //TC -> O(Nlog(N)) SC -> O(N)
       public int lowerBound(int[] arr, int k,int j){
           
           
