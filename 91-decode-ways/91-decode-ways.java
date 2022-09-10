@@ -17,24 +17,32 @@ class Solution {
         }
         
         for(int i=2;i<dp.length;i++){
-           if(arr[i-1]==0 && arr[i-2]==0){
-               return 0;
-           } 
-           else if(arr[i-1]==0 ){
-               if(arr[i-2]>=3){
-                   return 0;
-               }
-               dp[i]+=dp[i-2];
-           }
-           else if(arr[i-2]==0){
-               dp[i]+=dp[i-1];
-           }
-           else if(arr[i-2]==1 || arr[i-2]==2 && arr[i-1]<=6){
-               dp[i]+=dp[i-1]+dp[i-2];
-           } 
-           else if(arr[i-2]>2 || arr[i-2]==2 && arr[i-1]>=7){
-               dp[i]+=dp[i-1];
-           } 
+           // if(arr[i-1]==0 && arr[i-2]==0){
+           //     return 0;
+           // } 
+           // else if(arr[i-1]==0 ){
+           //     if(arr[i-2]>=3){
+           //         return 0;
+           //     }
+           //     dp[i]+=dp[i-2];
+           // }
+           // else if(arr[i-2]==0){
+           //     dp[i]+=dp[i-1];
+           // }
+           // else if(arr[i-2]==1 || arr[i-2]==2 && arr[i-1]<=6){
+           //     dp[i]+=dp[i-1]+dp[i-2];
+           // } 
+           // else if(arr[i-2]>2 || arr[i-2]==2 && arr[i-1]>=7){
+           //     dp[i]+=dp[i-1];
+           // } 
+            
+            
+            if(arr[i-1]!=0){
+                dp[i]+=dp[i-1];
+            }
+            if(arr[i-2]==1 || arr[i-2]==2 && arr[i-1]<=6){
+                dp[i]+=dp[i-2];
+            }
             
         }
         
